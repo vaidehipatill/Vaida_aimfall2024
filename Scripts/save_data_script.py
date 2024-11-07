@@ -40,6 +40,12 @@ def handle_event(event):
 
     print(f"Data for product {product_id} saved to {output_file_path}")
 
+    # # Send the extracted event data to the model
+    # model_response = process_product_data(product_id, buyer, seller, price)
+
+    # if model_response:
+    #     print(f"Processed model response: {model_response}")
+
 
 # Set up an event filter to listen for the "ProductPurchased" event
 event_filter = contract.events.ProductPurchased.create_filter(from_block='latest')
