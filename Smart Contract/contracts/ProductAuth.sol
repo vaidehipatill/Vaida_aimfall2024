@@ -24,8 +24,10 @@ contract ProductAuth {
         uint productId,
         address buyer,
         address seller,
-        uint price
+        uint price,
+        string imageHash  // Add imageHash to the event
     );
+
 
     // Constructor
     constructor() {
@@ -79,7 +81,17 @@ contract ProductAuth {
         );
 
         product.buyer = msg.sender;
+
+        // Emit event with imageHash included
+        emit ProductPurchased(
+            _productId,
+            msg.sender,
+            product.seller,
+            product.price,
+            product.imageHash
+        );
     }
+
 
     function verifyProduct(
         uint _productId,

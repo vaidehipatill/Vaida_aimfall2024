@@ -139,10 +139,3 @@ predict_image(img_path)
 
 
 
-
-
-# In[ ]:
-
-
-
-
