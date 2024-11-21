@@ -11,7 +11,11 @@ module.exports = async function (callback) {
 
     // Create product
     console.log("\nCreating product...");
-    await instance.setProduct(price, "00000", { from: seller });
+    await instance.setProduct(
+      price,
+      "24227925133a8de19671e97a3af8a67f5a072ebb9122694ef17008fa4e27df6f",
+      { from: "0xfE8266290419eA83e198506A8aFc1913381a7eBb" }
+    );
 
     // Check initial state
     let product = await instance.getProduct(1);
