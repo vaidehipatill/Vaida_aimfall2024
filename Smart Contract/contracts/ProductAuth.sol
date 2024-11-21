@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0; // Using specific version instead of ^0.8.0
+pragma solidity ^0.8.13;
 
 contract ProductAuth {
     address public owner;
@@ -25,9 +25,8 @@ contract ProductAuth {
         address buyer,
         address seller,
         uint price,
-        string imageHash  // Add imageHash to the event
+        string imageHash // Add imageHash to the event
     );
-
 
     // Constructor
     constructor() {
@@ -92,7 +91,6 @@ contract ProductAuth {
         );
     }
 
-
     function verifyProduct(
         uint _productId,
         string memory _imageHash
@@ -136,7 +134,8 @@ contract ProductAuth {
             _productId,
             product.buyer,
             product.seller,
-            product.price
+            product.price,
+            product.imageHash
         );
     }
 

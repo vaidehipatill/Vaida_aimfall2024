@@ -7,16 +7,19 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 # Load your trained model
-model = load_model('real_vs_fake_vgg16_model.keras')
+model = load_model('C:/Users/phama/Downloads/Vaida_aimfall2024/CNN Model/real_vs_fake_vgg16_model.keras')
 
 # Connect to Ganache
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 
 # Contract details
-contract_address = ""  # Replace with your contract's address on Ganache
-contract_abi = [
-    # Custom ABI
-]
+contract_address = "0x2763F5c622B6d44D646E7D58dEF3bC9309c29f95"  # Replace with your contract's address on Ganache
+compiled_contract_path = "../Smart Contract/build/contracts/ProductAuth.json"
+
+# Load contract ABI and bytecode
+with open(compiled_contract_path, "r") as file:
+    contract_json = json.load(file)
+    contract_abi = contract_json["abi"]
 
 # Load the contract
 contract = w3.eth.contract(address=contract_address, abi=contract_abi)
