@@ -158,9 +158,29 @@ st.markdown(
         margin: 0 auto;
     }
 
-    /* Image container spacing */
-    div.stImage {
-        margin: 0 1rem;
+    /* Image container spacing and constraints */
+    .stImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+    }
+    
+    .stImage > div {
+        max-width: 600px;
+        max-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .stImage img {
+        max-width: 600px;
+        max-height: 500px;
+        object-fit: contain;
+        width: auto;
+        height: auto;
     }
     </style>
     """,
