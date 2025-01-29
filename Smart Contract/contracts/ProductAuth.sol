@@ -44,6 +44,13 @@ contract ProductAuth {
     receive() external payable {}
     fallback() external payable {}
 
+    event ProductCreated(
+        uint productId,
+        address seller,
+        uint price,
+        string imageHash
+    );
+
     function setProduct(
         uint _price,
         string memory _imageHash
@@ -61,6 +68,8 @@ contract ProductAuth {
             price: _price,
             imageHash: _imageHash
         });
+
+        emit ProductCreated(newProductId, msg.sender, _price, _imageHash);
 
         return newProductId;
     }
