@@ -115,3 +115,4 @@ def predict_image(img_path):
 # Example usage
 img_path = r'C:\Users\phama\Downloads\Real Airpods-20241121T011149Z-001\Real Airpods\IMG_7569.jpg'
 predict_image(img_path)
+
